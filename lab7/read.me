@@ -1,0 +1,59 @@
+ПРАКТИЧНЕ ЗАНЯТТЯ №7
+Тема: Застовування анонімних вкладених класів
+Мета: Навчитись створювати анонімний клас на базі існуючих класів.
+Обладнання: комп’ютери Pentium, Celeron.
+Програмне забезпечення: MS Windows XP, пакет Java SDK.
+Хід роботи
+1. Модифікувати програму Dialog4.java.
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class Dialog4 extends JFrame {
+ JTextField fld = new JTextField();
+ JButton btn = new JButton("Натиснути");
+ JLabel lbl = new JLabel(" ");
+ Dialog4() {
+ super("Слухачі (listeners) полів та кнопок");
+ try {
+
+UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName())
+;
+ }
+ catch(Exception e) {
+ }
+ setSize(400, 150);
+ Container c = getContentPane();
+ c.add(lbl, BorderLayout.NORTH);
+ c.add(fld, BorderLayout.CENTER);
+ c.add(btn, BorderLayout.SOUTH);
+ fld.addActionListener(new ActionListener(){
+ public void actionPerformed(ActionEvent e) {
+ lbl.setText("Введений текст:"+fld.getText());
+ }
+ });
+ btn.addActionListener(new ActionListener(){
+ public void actionPerformed(ActionEvent e) {
+ lbl.setText("Натиснута кнопка");
+ }
+ });
+ WindowListener wndCloser = new WindowAdapter() {
+ public void windowClosing(WindowEvent e) {
+ System.exit(0);
+ }
+ };
+ addWindowListener(wndCloser);
+ setVisible(true);
+ }
+ public static void main(String[] args) {
+ new Dialog4();
+ }
+}
+
+Для цього використати елемент «панель» з класу JPanel. Додати панелі в контейнер.
+2. Для текстового поля використати конструктор
+JTextField fld = new JTextField(20);
+3. Аналогічні дії провести з кнопкою btn, розташувавши її на окремій панелі.
+4. Побудувати наступне застосування.
+Мітку (JLabel) та поле вводу (JTextField) потрібно згрупувати разом на одній панелі (JPanel).
+Аналогічно і для поля виводу. Для розташування двух панелей використовуємо
+BorderLayout.CENTER и BorderLayout.SOUTH, відповідно.
