@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Laba5 {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Task2 Application");
+        JFrame frame = new JFrame("2 завдання");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(190, 100);
         DoubleVector vector = new DoubleVector();
