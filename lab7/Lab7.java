@@ -7,7 +7,7 @@ public class Lab7 extends JFrame {
     JTextField outputField = new JTextField(20);
     JLabel inputLabel = new JLabel("Введіть текст:");
     JLabel outputLabel = new JLabel("Виведений текст:");
-    JButton executeButton = new JButton("Виконати"); // Додано кнопку
+    JButton executeButton = new JButton("Виконати");
 
     Lab7() {
         super("Мітки та поля вводу/виводу");
@@ -34,8 +34,6 @@ public class Lab7 extends JFrame {
         outputPanel.add(outputLabel, gbc);
         gbc.gridy = 1;
         outputPanel.add(outputField, gbc);
-
-        // Створення панелі для кнопки і додавання слухача подій
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(executeButton);
         executeButton.addActionListener(new ActionListener() {
