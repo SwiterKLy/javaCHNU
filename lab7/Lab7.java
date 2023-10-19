@@ -38,7 +38,12 @@ public class Lab7 extends JFrame {
         buttonPanel.add(executeButton);
         executeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                outputField.setText("Скрипт виконаний: " + inputField.getText());
+                outputField.setText("Кнопка натиснута");
+            }
+        });
+        inputField.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                outputField.setText("Введений текст: " + inputField.getText());
             }
         });
 
