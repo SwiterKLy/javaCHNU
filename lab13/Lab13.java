@@ -6,7 +6,7 @@ import java.io.*;
 public class Lab13 {
     public static void main(String args[]) {
         if (args.length < 2) {
-            System.out.println("Enter file and element to search");
+            System.out.println("Enter file name and element to search");
             return;
         }
 
